@@ -146,7 +146,7 @@ Car.prototype.drive = function(distance){
         super(attrs);
         this.specialty = attrs.specialty,
         this.favLanguage = attrs.favLanguage,
-        this.catchPhrase = `Don't forget the homies`
+        this.catchPhrase = attrs.catchPhrase
       }
       demo(subject){
         return `Today we are learning about ${subject}`
@@ -176,10 +176,10 @@ Car.prototype.drive = function(distance){
         super(attrs);
         this.previousBackground = attrs.previousBackground;
         this.className = attrs.className;
-        this.favSubjects = []; //is this correct?
+        this.favSubjects = attrs.favSubjects; 
       }
       listSubjects(){
-        return `Loving ${this.favSubjects.toString()}`; //need to fix this one
+        return `Loving ${this.favSubjects}`; 
       }
       PRAssignment(subject){
         return `${this.name} has submitted a PR for ${subject}`;
@@ -212,7 +212,7 @@ Car.prototype.drive = function(distance){
        return `${this.name} announces to ${channel}, @channel study times!`
      }
      debugsCode(student, subject){
-       `${this.name} debugs ${student.name}'s code on ${subject}`
+       return `${this.name} debugs ${student.name}'s code on ${subject}`
      }
  }
   /*
