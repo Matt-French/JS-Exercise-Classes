@@ -154,6 +154,9 @@ Car.prototype.drive = function(distance){
       grade(student, subject){
         return `${student.name} receives a perfect score on ${subject}`
       }
+      rngrade(){
+        return student.grade = student.grade - (Math.floor(Math.random() * 120) - 20);
+      }
  }
 
   /*
@@ -176,7 +179,8 @@ Car.prototype.drive = function(distance){
         super(attrs);
         this.previousBackground = attrs.previousBackground;
         this.className = attrs.className;
-        this.favSubjects = attrs.favSubjects; 
+        this.favSubjects = attrs.favSubjects;
+        this.grade = 99; 
       }
       listSubjects(){
         return `Loving ${this.favSubjects}`; 
@@ -186,6 +190,9 @@ Car.prototype.drive = function(distance){
       }
       sprintChallenge(subject){
         return `${this.name} has begun sprint challenge on ${subject}`;
+      }
+      graduate(){
+        return this.grade > 70 ? `Congratulations ${this.name}, you've just graduated from the Lambda School!` : Instructor.grade();
       }
  }
   
@@ -214,6 +221,7 @@ Car.prototype.drive = function(distance){
      debugsCode(student, subject){
        return `${this.name} debugs ${student.name}'s code on ${subject}`
      }
+
  }
   /*
     STRETCH PROBLEM (no tests!)
